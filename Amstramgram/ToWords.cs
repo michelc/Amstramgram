@@ -12,7 +12,27 @@
 
             if (number < 20) return basics[number];
 
-            return number.ToString();
+            // Gère les dizaines et les unités
+            var tens = new[] { "", "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante", "quatre-vingt", "quatre-vingt" };
+
+            int result = number / 10;
+            int remainder = number % 10;
+
+            var text = tens[result];
+            if (result == 7)
+            {
+                remainder += 10;
+            }
+            if (result == 9)
+            {
+                remainder += 10;
+            }
+            if (remainder > 0)
+            {
+                text += "-";
+                text += basics[remainder];
+            }
+            return text;
         }
     }
 }
