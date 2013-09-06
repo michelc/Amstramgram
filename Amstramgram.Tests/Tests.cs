@@ -41,5 +41,21 @@ namespace Amstramgram.Tests
                 Assert.AreEqual(oks[i] + "-sept", (i * 10 + 7).ToWords());
             }
         }
+
+        [TestMethod]
+        public void Les_dizaines_avec_une_unite_prennent_et_devant_l_unite()
+        {
+            for (int i = 21; i < 81; i += 10)
+            {
+                Assert.IsTrue(i.ToWords().Contains("-et-"));
+            }
+        }
+
+        [TestMethod]
+        public void Les_nombres_81_et_91_ne_contiennent_pas_de_et_devant_l_unite()
+        {
+            Assert.IsFalse(81.ToWords().Contains("-et-"));
+            Assert.IsFalse(91.ToWords().Contains("-et-"));
+        }
     }
 }

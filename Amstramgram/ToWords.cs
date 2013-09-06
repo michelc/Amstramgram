@@ -18,12 +18,23 @@
             int result = number / 10;
             int remainder = number % 10;
 
+            // - la dizaine
             var text = tens[result];
+
+            // - cas où l'unité vaut 1
+            if (remainder == 1)
+            {
+                // la dizaine est séparée de l'unité par "et"
+                // pour 21, 31, 41, 51, 61, 71 mais pas 81 et 91
+                if (result < 8) text += "-et";
+            }
+
+            // l'unité
             if (result == 7)
             {
                 remainder += 10;
             }
-            if (result == 9)
+            else if (result == 9)
             {
                 remainder += 10;
             }
@@ -32,6 +43,7 @@
                 text += "-";
                 text += basics[remainder];
             }
+
             return text;
         }
     }
