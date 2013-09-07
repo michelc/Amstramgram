@@ -29,6 +29,13 @@
                 if (result < 8) text += "-et";
             }
 
+            // - pluriel de vingt
+            if (result == 8)
+            {
+                // quatre-vingts prend un "s" quand pas suivi d'un autre nombre
+                if (remainder == 0) text += "s";
+            }
+
             // l'unité
             if (result == 7)
             {

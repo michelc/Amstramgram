@@ -24,8 +24,7 @@ namespace Amstramgram.Tests
         [TestMethod]
         public void Les_dizaines_exactes_sont_correctes()
         {
-            // En vrai, 80 s'écrit quatre-vingts et pas quatre-vingt, mais ce sera pour plus tard
-            var oks = new[] { "", "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingt", "quatre-vingt-dix" };
+            var oks = new[] { "", "dix", "vingt", "trente", "quarante", "cinquante", "soixante", "soixante-dix", "quatre-vingts", "quatre-vingt-dix" };
             for (int i = 1; i < 10; i += 1)
             {
                 Assert.AreEqual(oks[i], (i * 10).ToWords());
@@ -56,6 +55,12 @@ namespace Amstramgram.Tests
         {
             Assert.IsFalse(81.ToWords().Contains("-et-"));
             Assert.IsFalse(91.ToWords().Contains("-et-"));
+        }
+
+        [TestMethod]
+        public void Pas_de_s_a_80_quand_suivi_de_mille()
+        {
+            Assert.AreEqual("quatre-vingt-mille", 80000.ToWords());
         }
     }
 }
