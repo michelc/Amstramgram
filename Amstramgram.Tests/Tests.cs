@@ -62,5 +62,24 @@ namespace Amstramgram.Tests
         {
             Assert.AreEqual("quatre-vingt-mille", 80000.ToWords());
         }
+
+        [TestMethod]
+        public void Le_100_renvoie_cent()
+        {
+            Assert.AreEqual("cent", 100.ToWords());
+        }
+
+        [TestMethod]
+        public void Les_centaines_avec_dizaines_ou_unites_sont_correctes()
+        {
+            Assert.AreEqual("cent-un", 101.ToWords());
+            Assert.AreEqual("cent-onze", 111.ToWords());
+            Assert.AreEqual("cent-vingt-trois", 123.ToWords());
+            Assert.AreEqual("deux-cent-trente-quatre", 234.ToWords());
+            Assert.AreEqual("cinq-cent-cinquante-et-un", 551.ToWords()); // -et-un
+            Assert.AreEqual("huit-cent-quatre-vingts", 880.ToWords());   // s à 80
+            Assert.AreEqual("huit-cent-quatre-vingt-un", 881.ToWords()); // ni s, ni et à 81
+        }
     }
 }
+
