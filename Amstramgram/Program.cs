@@ -104,6 +104,9 @@ namespace Amstramgram
             Ecrire("Pluriel de million");
             Ecrire(2000000, "deux millions");
 
+            Ecrire("Ne gère pas les milliards");
+            Ecrire(1000000000, 1000000000.ToString());
+
             Ecrire("Fin");
             Console.ReadLine();
         }

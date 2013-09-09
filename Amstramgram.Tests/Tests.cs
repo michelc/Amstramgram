@@ -137,6 +137,13 @@ namespace Amstramgram.Tests
         {
             Assert.IsTrue(2000000.ToWords().Contains("millions"));
         }
+
+        [TestMethod]
+        public void Les_milliards_ne_sont_pas_geres()
+        {
+            Assert.AreEqual(1000000000.ToString(), 1000000000.ToWords());
+            Assert.AreNotEqual(999999999.ToString(), 999999999.ToWords());
+        }
     }
 }
 
