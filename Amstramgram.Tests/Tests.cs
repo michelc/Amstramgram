@@ -119,6 +119,24 @@ namespace Amstramgram.Tests
         {
             Assert.IsFalse(2000.ToWords().Contains("milles"));
         }
+
+        [TestMethod]
+        public void Le_1_000_000_renvoie_un_million()
+        {
+            Assert.AreEqual("un million", 1000000.ToWords());
+        }
+
+        [TestMethod]
+        public void Decoupe_en_3_blocs_de_3_chiffres()
+        {
+            Assert.AreEqual("un million deux-cent-trente-quatre-mille-cinq-cent-soixante-sept", 1234567.ToWords());
+        }
+
+        [TestMethod]
+        public void Million_prend_un_s_au_pluriel()
+        {
+            Assert.IsTrue(2000000.ToWords().Contains("millions"));
+        }
     }
 }
 

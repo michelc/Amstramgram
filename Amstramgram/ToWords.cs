@@ -4,14 +4,25 @@
     {
         public static string ToWords(this int number)
         {
-            // Ne gère pas les millions
-            if (number >= 1000000) return number.ToString();
+            // Ne gère pas les milliards
+            if (number >= 1000000000) return number.ToString();
 
             // Le zéro est un cas un peu spécial
             if (number == 0) return "zéro";
 
             var text = "";
 
+            // Gère les millions
+            int million = number / 1000000;
+            if (million > 0)
+            {
+                text += Textify(million) + " million";
+                if (million > 1) text += "s";
+                number = number % 1000000;
+                if (number > 0) text += " ";
+            }
+
+            // Gère les milliers
             int millier = number / 1000;
             if (millier > 0)
             {
@@ -24,6 +35,7 @@
                 text = text.Replace("vingts-mille", "vingt-mille");
             }
 
+            // Gère les centaines, dizaines et unités
             text += Textify(number);
 
             return text;

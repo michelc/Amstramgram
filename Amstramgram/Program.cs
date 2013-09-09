@@ -95,6 +95,15 @@ namespace Amstramgram
             Ecrire("Pluriel de mille");
             Ecrire(2000, "deux-mille");
 
+            Ecrire("1000000 s'écrit un million");
+            Ecrire(1000000, "un million");
+
+            Ecrire("Traite les millions par blocs de 3 chiffres");
+            Ecrire(1234567, "un million deux-cent-trente-quatre-mille-cinq-cent-soixante-sept");
+
+            Ecrire("Pluriel de million");
+            Ecrire(2000000, "deux millions");
+
             Ecrire("Fin");
             Console.ReadLine();
         }
