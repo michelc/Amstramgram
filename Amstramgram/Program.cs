@@ -84,6 +84,14 @@ namespace Amstramgram
             Ecrire("Cent au singulier devant mille");
             Ecrire(200000, "quatre-vingt-mille");
 
+            Ecrire("1000 s'écrit mille");
+            Ecrire(1000, "mille");
+
+            Ecrire("Traite les nombres par blocs de 3 chiffres");
+            Ecrire(1234, "mille-deux-cent-trente-quatre");
+            Ecrire(12345, "douze-mille-trois-cent-quarante-cinq");
+            Ecrire(123456, "cent-vingt-trois-mille-quatre-cent-cinquante-six");
+
             Ecrire("Fin");
             Console.ReadLine();
         }

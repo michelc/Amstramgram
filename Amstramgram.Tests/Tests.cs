@@ -98,6 +98,21 @@ namespace Amstramgram.Tests
         {
             Assert.AreEqual("deux-cent-mille", 200000.ToWords());
         }
+
+        [TestMethod]
+        public void Le_1000_renvoie_mille()
+        {
+            Assert.AreEqual("mille", 1000.ToWords());
+        }
+
+        [TestMethod]
+        public void Decoupe_par_blocs_de_3_chiffres()
+        {
+            Assert.AreEqual("mille-deux-cent-trente-quatre", 1234.ToWords());
+            Assert.AreEqual("douze-mille-trois-cent-quarante-cinq", 12345.ToWords());
+            Assert.AreEqual("cent-vingt-trois-mille-quatre-cent-cinquante-six", 123456.ToWords());
+            Assert.AreEqual("cent-mille", 100000.ToWords());
+        }
     }
 }
 

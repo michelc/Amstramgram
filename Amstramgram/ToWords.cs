@@ -4,9 +4,29 @@
     {
         public static string ToWords(this int number)
         {
+            // Ne gère pas les millions
+            if (number >= 1000000) return number.ToString();
+
             // Le zéro est un cas un peu spécial
             if (number == 0) return "zéro";
 
+            var text = "";
+
+            int millier = number / 1000;
+            if (millier > 0)
+            {
+                text += millier == 1 ? "mille" : Textify(millier) + "-mille";
+                number = number % 1000;
+                if (number > 0) text += "-";
+            }
+
+            text += Textify(number);
+
+            return text;
+        }
+
+        private static string Textify(int number)
+        {
             // Les nombres basiques qui serviront à former des combinaisons
             var basics = new[] { "", "un", "deux", "trois", "quatre", "cinq", "six", "sept", "huit", "neuf", "dix", "onze", "douze", "treize", "quatorze", "quinze", "seize", "dix-sept", "dix-huit", "dix-neuf" };
 
@@ -94,4 +114,3 @@
         }
     }
 }
-
