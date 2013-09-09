@@ -77,6 +77,13 @@ namespace Amstramgram
             Ecrire(880, "huit-cent-quatre-vingts");
             Ecrire(881, "huit-cent-quatre-vingt-un");
 
+            Ecrire("Pluriel de cent");
+            Ecrire(200, "deux-cents");
+            Ecrire(201, "deux-cent-un");
+
+            Ecrire("Cent au singulier devant mille");
+            Ecrire(200000, "quatre-vingt-mille");
+
             Ecrire("Fin");
             Console.ReadLine();
         }
@@ -105,7 +112,7 @@ namespace Amstramgram
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(string.Format("KO : {0}.ToWords() => '{1}' et pas '{2}'", number, resultat, reponse));
+                Console.WriteLine(string.Format("KO : {0}.ToWords() => '{1}' // OK = '{2}'", number, resultat, reponse));
             }
         }
     }

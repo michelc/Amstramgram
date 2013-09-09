@@ -58,7 +58,7 @@ namespace Amstramgram.Tests
         }
 
         [TestMethod]
-        public void Pas_de_s_a_80_quand_suivi_de_mille()
+        public void Vingt_ne_prend_pas_de_s_quand_suivi_de_mille()
         {
             Assert.AreEqual("quatre-vingt-mille", 80000.ToWords());
         }
@@ -79,6 +79,24 @@ namespace Amstramgram.Tests
             Assert.AreEqual("cinq-cent-cinquante-et-un", 551.ToWords()); // -et-un
             Assert.AreEqual("huit-cent-quatre-vingts", 880.ToWords());   // s à 80
             Assert.AreEqual("huit-cent-quatre-vingt-un", 881.ToWords()); // ni s, ni et à 81
+        }
+
+        [TestMethod]
+        public void Cent_est_au_pluriel_pour_les_multiples_de_100()
+        {
+            Assert.IsTrue(200.ToWords().Contains("cents"));
+        }
+
+        [TestMethod]
+        public void Cent_est_au_singulier_si_pas_un_multiple_de_100()
+        {
+            Assert.IsFalse(201.ToWords().Contains("cents"));
+        }
+
+        [TestMethod]
+        public void Cent_ne_prend_pas_de_s_quand_suivi_de_mille()
+        {
+            Assert.AreEqual("deux-cent-mille", 200000.ToWords());
         }
     }
 }

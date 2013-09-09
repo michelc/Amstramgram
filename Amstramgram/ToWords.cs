@@ -31,6 +31,7 @@
                 {
                     // deux-cent..., trois-cent...
                     text = basics[result] + "-cent";
+                    if (remainder == 0) text += "s";
                 }
 
                 // Reste à écrire les dizaines et les unités
