@@ -113,6 +113,12 @@ namespace Amstramgram.Tests
             Assert.AreEqual("cent-vingt-trois-mille-quatre-cent-cinquante-six", 123456.ToWords());
             Assert.AreEqual("cent-mille", 100000.ToWords());
         }
+
+        [TestMethod]
+        public void Mille_ne_prend_jamais_de_s()
+        {
+            Assert.IsFalse(2000.ToWords().Contains("milles"));
+        }
     }
 }
 

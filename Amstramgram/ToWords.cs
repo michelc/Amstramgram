@@ -18,6 +18,10 @@
                 text += millier == 1 ? "mille" : Textify(millier) + "-mille";
                 number = number % 1000;
                 if (number > 0) text += "-";
+
+                // Vingt ou cent suivis de mille sont toujours au singulier
+                text = text.Replace("cents-mille", "cent-mille");
+                text = text.Replace("vingts-mille", "vingt-mille");
             }
 
             text += Textify(number);
