@@ -106,6 +106,10 @@ namespace Amstramgram
 
             Ecrire("Ne gère pas les milliards");
             Ecrire(1000000000, 1000000000.ToString());
+            Ecrire(-1000000000, (-1000000000).ToString());
+
+            Ecrire("Les nombres négatifs sont gérés");
+            Ecrire(-123, "moins cent-vingt-trois");
 
             Ecrire("Fin");
             Console.ReadLine();

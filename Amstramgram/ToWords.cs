@@ -1,16 +1,25 @@
-﻿namespace Amstramgram
+﻿using System;
+
+namespace Amstramgram
 {
     public static class ToWordsExtension
     {
         public static string ToWords(this int number)
         {
             // Ne gère pas les milliards
-            if (number >= 1000000000) return number.ToString();
+            if (Math.Abs(number) >= 1000000000) return number.ToString();
 
             // Le zéro est un cas un peu spécial
             if (number == 0) return "zéro";
 
             var text = "";
+
+            // Gère les nombres négatifs
+            if (number < 0)
+            {
+                text = "moins ";
+                number = 0 - number;
+            }
 
             // Gère les millions
             int million = number / 1000000;

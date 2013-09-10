@@ -144,6 +144,19 @@ namespace Amstramgram.Tests
             Assert.AreEqual(1000000000.ToString(), 1000000000.ToWords());
             Assert.AreNotEqual(999999999.ToString(), 999999999.ToWords());
         }
+
+        [TestMethod]
+        public void Un_nombre_negatif_commence_par_moins()
+        {
+            Assert.IsTrue((-123).ToWords().StartsWith("moins "));
+        }
+
+        [TestMethod]
+        public void Les_milliards_negatifs_ne_sont_pas_geres()
+        {
+            Assert.AreEqual((-1000000000).ToString(), (-1000000000).ToWords());
+            Assert.AreNotEqual((-999999999).ToString(), (-999999999).ToWords());
+        }
     }
 }
 
