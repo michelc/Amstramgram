@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amstramgram", "Amstramgram\Amstramgram.csproj", "{C0AF35D1-36E8-41B0-9053-F8C7BB41D8FF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amstramgram.Tests", "Amstramgram.Tests\Amstramgram.Tests.csproj", "{E06E6365-CBE0-4708-99FD-ADA922791B8D}"
